@@ -1,1 +1,1 @@
-./build.sh -eux -i ./install
+./build.sh -eut -i ./install
