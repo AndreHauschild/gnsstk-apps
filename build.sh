@@ -13,8 +13,8 @@
 
 source $(dirname "$BASH_SOURCE")/build_setup.sh
 
-# This is a bit of a hack.  
-# Downstream apps packages expect to find gnsstk-apps in gnsstk/bin 
+# This is a bit of a hack.
+# Downstream apps packages expect to find gnsstk-apps in gnsstk/bin
 user_install_prefix+="/gnsstk"
 system_install_prefix+="/gnsstk"
 
@@ -225,6 +225,7 @@ cd "$build_root"
 args=$@
 args+=${prefixes:+" -DCMAKE_PREFIX_PATH=$prefixes"}
 args+=${install_prefix:+" -DCMAKE_INSTALL_PREFIX=$install_prefix"}
+args+=" -DCMAKE_PREFIX_PATH=$HOME/Software/gnsstk/install/"
 args+=${build_ext:+" -DBUILD_EXT=ON"}
 args+=${verbose:+" -DDEBUG_SWITCH=ON"}
 args+=${user_install:+" -DPYTHON_USER_INSTALL=ON"}
